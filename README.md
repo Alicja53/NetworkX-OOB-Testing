@@ -21,7 +21,7 @@ Projekt polega na automatycznej weryfikacji biblioteki NetworkX. Sprawdzamy, czy
 * **Logika testów:** Przygotowanie skryptów weryfikujących poprawność działania funkcji biblioteki NetworkX.
 * **Obsługa błędów:** Identyfikacja i dokumentowanie wszelkich nieprawidłowości w działaniu modułu poprzez system zadań w repozytorium.
 
-### Tester Wydajnościowy (Karol) - MATRI
+### Tester Wydajnościowy (Karol) - MATRIii
 * **Analiza wydajności:** Implementacja testów obciążeniowych mierzących czasy wykonywania operacji przy dużej liczbie węzłów i krawędzi.
 * **Raportowanie:** Tworzenie czytelnych zestawień pomiarowych, które posłużą do oceny efektywności biblioteki.
 
