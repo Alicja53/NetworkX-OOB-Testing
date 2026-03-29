@@ -1,0 +1,40 @@
+name: NetworkX OOB Testing
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install networkx pytest
+
+    - name: Run Functional Tests (Grzegorz)
+      run: |
+        if [ -f tests/test_logic.py ]; then
+          pytest tests/test_logic.py
+        else
+          echo "Plik test_logic.py jeszcze nie istnieje."
+        fi
+
+    - name: Run Performance Tests (Karol)
+      run: |
+        if [ -f tests/test_performance.py ]; then
+          python tests/test_performance.py
+        else
+          echo "Plik test_performance.py jeszcze nie istnieje."
+        fi
