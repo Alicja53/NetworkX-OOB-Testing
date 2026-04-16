@@ -42,7 +42,8 @@ Projekt polega na automatycznej weryfikacji biblioteki NetworkX. Sprawdzamy, czy
 
 W celu zapewnienia sprawnej realizacji projektu oraz wysokiej jakości kodu, zespół przyjął następujące zasady:
 
-* **Kanały komunikacji:** * **Messenger:** Bieżąca komunikacja operacyjna i szybkie ustalenia.
+* **Kanały komunikacji:**
+  *  **Messenger:** Bieżąca komunikacja operacyjna i szybkie ustalenia.
   * **Discord:** Cotygodniowe spotkania statusowe (środy po lekcjach) oraz wspólne sesje rozwiązywania problemów technicznych.
 * **Zarządzanie zadaniami:** Wszystkie prace są rejestrowane w zakładce **GitHub Issues**. Każde zadanie musi mieć przypisanego wykonawcę (Assignee).
 * **Zasady pracy z kodem (Workflow):**
