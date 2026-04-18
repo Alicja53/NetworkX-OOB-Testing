@@ -10,7 +10,7 @@ Te testy mają potwierdzić, że podstawowe mechanizmy biblioteki działają zgo
 
 ### Scenariusz F1: Integralność struktury grafu
 * **Opis:** Tworzymy pusty graf skierowany (`DiGraph`) i dodajemy do niego pętlą dokładnie **10 000 węzłów** oraz **20 000 losowych krawędzi**.
-* **Weryfikacja:** Wywołujemy funkcje `G.number_of_nodes()` oraz `G.number_of_edges()`.
+* **Weryfikacja:** Wywołujemy funkcje `number_of_nodes()` oraz `number_of_edges()`.
 * **Oczekiwany wynik:** Liczba elementów wewnątrz obiektu musi być identyczna z liczbą danych wprowadzonych. Każda rozbieżność oznacza błąd w zarządzaniu pamięcią grafu.
 
 ### Scenariusz F2: Test najkrótszej ścieżki (Dijkstra)
