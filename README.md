@@ -32,7 +32,7 @@ Projekt polega na automatycznej weryfikacji biblioteki NetworkX. Sprawdzamy, czy
 | Etap | Termin | Zadania i Cele | Rezultat (Milestone) |
 | :--- | :--- | :--- | :--- |
 | **Etap 1** ✅| **do 17.04.2026** | **Organizacja:** Inicjalizacja repozytorium, dokumentacja startowa, wybór modułu PyPI i podział ról. | Repozytorium gotowe do oceny (START) |
-| **Etap 2** | **do 24.04.2026** | **Zarządzanie:** Konfiguracja Issues i Pull Requestów. Wdrożenie szkieletów testów funkcjonalnych. | Aktywny workflow i zarządzanie kodem |
+| **Etap 2** ✅| **do 24.04.2026** | **Zarządzanie:** Konfiguracja Issues i Pull Requestów. Wdrożenie szkieletów testów funkcjonalnych. | Aktywny workflow i zarządzanie kodem |
 | **Etap 3** | **do 08.05.2026** | **Automatyzacja:** Pełna implementacja testów wydajnościowych. Konfiguracja manualnej Pipeline. | Działający system CI/CD |
 | **Etap 4** | **do 22.05.2026** | **Release:** Raport końcowy, samoocena zespołu i oficjalne zamknięcie projektu. | Stabilna wersja końcowa (RELEASE) |
 
