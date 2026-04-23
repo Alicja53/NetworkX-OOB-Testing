@@ -1,4 +1,5 @@
 import networkx as nx
+import pytest
 
 #sprawdzanie czy funkcje podają odpowiednie ilości granic i węzłów
 def checking_number_of_entities(Graph):
@@ -23,5 +24,6 @@ for i in range(1,1001):
     for g in range(1,21):
         Graph.add_edge(i, i+g)
         
-#wywołanie funkcji
-print(checking_number_of_entities(Graph))
+#wywołanie testu
+def test_graph_integrity():
+    assert checking_number_of_entities(Graph) == True
