@@ -1,5 +1,6 @@
 #import biblioteki do testowania(networkx)
 import networkx as nx
+import pytest
 
 # znajdowanie najkrótszych dróg za pomocą shortest_path
 def finding_shortest_path(First_Graph, Second_Graph):
