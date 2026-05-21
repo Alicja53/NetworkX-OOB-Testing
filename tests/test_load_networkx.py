@@ -2,17 +2,13 @@ import networkx as nx
 import time
 import os
 import csv
-import networkx as nx
-import time
-import os
-import csv
 import resource
 
 def get_memory_usage():
     usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     return usage / 1024
 
-def run_automated_suite():
+def test_run_automated_suite():
     print("==================================================")
     print("URUCHAMIANIE REJESTRACJI TESTÓW WYDAJNOŚCIOWYCH")
     print("==================================================")
@@ -48,7 +44,7 @@ def run_automated_suite():
         writer = csv.writer(file)
         writer.writerow(["liczba_krawedzi", "czas_operacji_sekundy"])
         writer.writerows(results)
+        
     print(f"\n[SUKCES] Dane pomyślnie zarejestrowane w pliku: {csv_file}")
-
-if __name__ == "__main__":
-    run_automated_suite()
+    
+    assert os.path.exists(csv_file) is True
