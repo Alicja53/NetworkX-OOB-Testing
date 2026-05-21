@@ -22,7 +22,7 @@ def test_run_automated_suite():
     if os.path.exists(csv_file):
         os.remove(csv_file)
         
-    # 2. Zapisujemy nagłówki (ze średnikiem dla polskiego Excela)
+
     with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file, delimiter=";")
         writer.writerow(["Liczba_krawedzi", "Czas_operacji_sekundy"])
