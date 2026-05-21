@@ -10,7 +10,7 @@ def get_memory_usage():
 
 def test_run_automated_suite():
     print("==================================================")
-    print("URUCHAMIANIE REJESTRACJI TESTÓW WYDAJNOŚCIOWYCH (MATRIii)")
+    print("URUCHAMIANIE REJESTRACJI TESTÓW WYDAJNOŚCIOWYCH")
     print("==================================================")
     
     edge_variants = [100000, 500000, 1000000]
