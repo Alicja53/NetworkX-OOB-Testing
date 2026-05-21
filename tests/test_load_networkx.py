@@ -1,27 +1,21 @@
 import networkx as nx
 import time
 
-def test_graph_performance():
-    print("\n--- TEST 1: GENEROWANIE GRAFU (100K KRAWDZI) ---")
+def run_automated_suite():
+    print("==================================================")
+    print("URUCHAMIANIE REJESTRACJI TESTÓW WYDAJNOŚCIOWYCH")
+    print("==================================================")
     
-    # Parametry: n - węzły, m - krawędzie
-    n = 5000 
-    m = 1000000 
+    edge_variants = [100000, 500000, 1000000]
+    nodes = 5000
     
-    start = time.time()
-    # Generowanie grafu o zadanej liczbie krawędzi
-    G = nx.gnm_random_graph(n, m)
-    end = time.time()
-    
-    print(f"Wygenerowano graf ({m} krawędzi) w: {end-start:.4f}s")
+    for edges in edge_variants:
+        print(f"\nUruchamianie pomiaru dla M = {edges} krawędzi...")
+        start_time = time.time()
+        G = nx.gnm_random_graph(nodes, edges, seed=42)
+        end_time = time.time()
+        print(f"-> Zakończono w: {end_time - start_time:.4f}s")
+        del G
 
 if __name__ == "__main__":
-    print("WYBÓR TESTU OBCIĄŻENIOWEGO:")
-    print("1. Scenariusz W1 (100k krawędzi)")
-    
-    wybor = input("Wybierz numer: ")
-    
-    if wybor == '1':
-        test_graph_performance()
-    else:
-        print("Błędny wybór. Zamykanie.")
+    run_automated_suite()
