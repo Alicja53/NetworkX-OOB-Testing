@@ -3,11 +3,17 @@ import time
 import os
 import csv
 import psutil
+import networkx as nx
+import time
+import os
+import csv
+import resource
 
 def get_memory_usage():
-    # Pobiera zużycie pamięci RAM przez nasz skrypt w MB
-    process = psutil.Process(os.getpid())
-    return process.memory_info().rss / (1024 * 1024)
+    # Pobiera zużycie RAM procesu w megabajtach (MB) za pomocą wbudowanego modułu
+    usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    # Na Linuxie (w GitHub Actions) wynik podawany jest w kilobajtach, więc dzielimy przez 1024
+    return usage / 1024
 
 def run_automated_suite():
     print("==================================================")
@@ -21,7 +27,6 @@ def run_automated_suite():
     for edges in edge_variants:
         print(f"\nUruchamianie pomiaru dla M = {edges} krawędzi...")
         
-        # Pomiar pamięci przed generowaniem grafu
         ram_before = get_memory_usage()
         
         start_time = time.time()
@@ -29,13 +34,11 @@ def run_automated_suite():
         end_time = time.time()
         
         duration = end_time - start_time
-        # Pomiar pamięci po wygenerowaniu grafu
         ram_after = get_memory_usage()
         ram_used = ram_after - ram_before
         
         print(f"-> Zakończono w: {duration:.4f}s")
         
-        # Wytyczna 3: Monitoring zasobów dla największego grafu (1M)
         if edges == 1000000:
             print(f"-> [MONITORING ZASOBÓW] Zużycie RAM dla grafu 1M: {ram_used:.2f} MB")
         
