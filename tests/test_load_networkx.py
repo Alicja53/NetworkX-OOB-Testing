@@ -10,7 +10,7 @@ def get_memory_usage():
 
 def test_run_automated_suite():
     print("==================================================")
-    print("URUCHAMIANIE REJESTRACJI TESTÓW WYDAJNOŚCIOWYCH")
+    print("URUCHAMIANIE REJESTRACJI TESTÓW WYDAJNOŚCIOWYCH ")
     print("==================================================")
     
     edge_variants = [100000, 500000, 1000000]
@@ -19,13 +19,12 @@ def test_run_automated_suite():
     os.makedirs("tests", exist_ok=True)
     csv_file = "tests/results.csv"
     
-    if os.path.exists(csv_file):
-        os.remove(csv_file)
-        
+    
     with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file, delimiter=";")
         writer.writerow(["Liczba_krawedzi", "Czas_operacji_sekundy"])
     
+    # KROK B: Pętla przechodzi po wariantach
     for edges in edge_variants:
         print(f"Uruchamianie pomiaru dla M = {edges} krawędzi...")
         
@@ -40,13 +39,12 @@ def test_run_automated_suite():
         ram_used = ram_after - ram_before
         
         print(f"-> Zakończono w: {duration:.4f}s")
-        if edges == 1000000:
-            print(f"-> Zużycie RAM dla 1M: {ram_used:.2f} MB")
         
         with open(csv_file, mode="a", newline="", encoding="utf-8") as file:
             writer = csv.writer(file, delimiter=";")
             writer.writerow([edges, round(duration, 4)])
             
         del G
-
+        
+    print(f"\n[SUKCES] Dane pomyślnie zarejestrowane w pliku: {csv_file}")
     assert os.path.exists(csv_file) is True
