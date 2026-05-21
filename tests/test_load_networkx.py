@@ -10,12 +10,22 @@ def get_memory_usage():
 
 def test_run_automated_suite():
     print("==================================================")
-    print("URUCHAMIANIE REJESTRACJI TESTÓW WYDAJNOŚCIOWYCH")
+    print("URUCHAMIANIE REJESTRACJI TESTÓW WYDAJNOŚCIOWYCH ")
     print("==================================================")
     
     edge_variants = [100000, 500000, 1000000]
     nodes = 5000
-    results = []
+    
+    os.makedirs("tests", exist_ok=True)
+    csv_file = "tests/results.csv"
+    
+    if os.path.exists(csv_file):
+        os.remove(csv_file)
+        
+    # 2. Zapisujemy nagłówki (ze średnikiem dla polskiego Excela)
+    with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file, delimiter=";")
+        writer.writerow(["Liczba_krawedzi", "Czas_operacji_sekundy"])
     
     for edges in edge_variants:
         print(f"\nUruchamianie pomiaru dla M = {edges} krawędzi...")
@@ -35,16 +45,11 @@ def test_run_automated_suite():
         if edges == 1000000:
             print(f"-> [MONITORING ZASOBÓW] Zużycie RAM dla grafu 1M: {ram_used:.2f} MB")
         
-        results.append([edges, round(duration, 4)])
+        with open(csv_file, mode="a", newline="", encoding="utf-8") as file:
+            writer = csv.writer(file, delimiter=";")
+            writer.writerow([edges, round(duration, 4)])
+            
         del G
-    
-    os.makedirs("tests", exist_ok=True)
-    csv_file = "tests/results.csv"
-    with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
-        writer.writerow(["liczba_krawedzi", "czas_operacji_sekundy"])
-        writer.writerows(results)
         
-    print(f"\n[SUKCES] Dane pomyślnie zarejestrowane w pliku: {csv_file}")
-    
+    print(f"\n[SUKCES] Wszystkie 3 skale pomyślnie zarejestrowane w: {csv_file}")
     assert os.path.exists(csv_file) is True
