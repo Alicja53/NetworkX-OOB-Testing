@@ -2,7 +2,6 @@ import networkx as nx
 import time
 import os
 import csv
-import psutil
 import networkx as nx
 import time
 import os
@@ -10,9 +9,7 @@ import csv
 import resource
 
 def get_memory_usage():
-    # Pobiera zużycie RAM procesu w megabajtach (MB) za pomocą wbudowanego modułu
     usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-    # Na Linuxie (w GitHub Actions) wynik podawany jest w kilobajtach, więc dzielimy przez 1024
     return usage / 1024
 
 def run_automated_suite():
