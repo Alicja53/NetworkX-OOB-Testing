@@ -17,11 +17,6 @@ Te testy mają potwierdzić, że podstawowe mechanizmy biblioteki działają zgo
 * **Opis:** Budujemy graf o znanej strukturze (np. siatka lub pierścień), gdzie odległość między dwoma punktami jest nam znana przed uruchomieniem programu.
 * **Weryfikacja:** Uruchamiamy funkcję `shortest_path` i porównujemy wynik z naszymi obliczeniami "na papierze".
 * **Oczekiwany wynik:** Algorytm musi zwrócić najkrótszą możliwą drogę. Test kończy się niepowodzeniem, jeśli znaleziona trasa jest dłuższa lub nie istnieje.
-
-### Scenariusz F3: Obsługa wyjątków i przypadków skrajnych
-* **Opis:** Teoretyczna weryfikacja odporności biblioteki na błędy logiczne użytkownika.
-* **Oczekiwane zachowanie:** Przy próbie wyznaczenia najkrótszej ścieżki w grafie bez połączeń biblioteka musi zwrócić dedykowany wyjątek `NetworkXNoPath`. Przy zapytaniu o nieistniejący węzeł musi zostać wyrzucony wyjątek `NodeNotFound`. Zapobiega to awarii całej aplikacji.
-
 ---
 
 ## 3. Testy Wydajnościowe (Skala i Szybkość)
