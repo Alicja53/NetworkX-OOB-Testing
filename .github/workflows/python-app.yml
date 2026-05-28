@@ -19,10 +19,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install networkx pytest pytest-cov
 
-    - name: Run All Tests with Unified Reporting
+    - name: Run All Functional Tests with Unified Reporting
       run: |
-        # Podajemy cały folder 'tests', aby Pytest automatycznie wykrył i uruchomił wszystkie testy
-        pytest tests/ --junitxml=report.xml
+        # Nadpisujemy domyślną konwencję Pytesta, aby uruchomił KAŻDY plik .py w katalogu tests/
+        pytest tests/ -o python_files="*.py" --junitxml=report.xml
 
     - name: Run Performance Tests
       run: |
