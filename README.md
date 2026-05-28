@@ -71,8 +71,8 @@ Wymagany Python 3.10+ oraz menedżer pakietów `pip`.
 | :--- | :--- | :--- |
 | **1** | Pobranie repozytorium | `git clone https://github.com/Alicja53/NetworkX-OOB-Testing.git` |
 | **2** | Instalacja bibliotek | `pip install -r requirements.txt` |
-| **3** | Testy funkcjonalne | `pytest tests/test_logic.py` |
-| **4** | Testy wydajnościowe | `python tests/test_performance.py` |
+| **3** | Testy funkcjonalne | `pytest tests/shortest_path_finder.py` |
+| **4** | Testy wydajnościowe | `python tests/test_load_networkx.py` |
 
 ### Tryb zdalny (GitHub Actions)
 Zautomatyzowana weryfikacja OOB na zewnętrznej infrastrukturze.
